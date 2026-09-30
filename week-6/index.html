@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 6 – Industrial-Ready Prototyping (26–29 September 2026)</title>
+  <meta name="description" content="Portfolio log for Week 6: Industrial-Ready Prototyping covering 3D CAD in Fusion 360, laser cutting with RDWorks V8 at FabLab Coimbatore, and 3D printing with Bambu Studio.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand-link" aria-label="Go to Top">
+        <div class="brand-icon">W6</div>
+        <div class="brand-text-col">
+          <span class="brand-title">Week 6: Prototyping</span>
+          <span class="brand-subtitle">26–29 Sept 2026</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#day1" class="nav-link">Day 1: CAD</a>
+        <a href="#day2" class="nav-link">Day 2: Laser</a>
+        <a href="#day3" class="nav-link">Day 3: 3D Print</a>
+        <a href="#summary" class="nav-link">Summary</a>
+        <a href="#reflection" class="nav-link">Reflection</a>
+      </nav>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+        <button type="button" id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <!-- Populated by JS -->
+        </button>
+
+        <button type="button" id="hamburgerBtn" class="hamburger-btn" aria-label="Open Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" x2="20" y1="12"/><line x1="4" x2="20" y1="6" x2="20" y1="6"/><line x1="4" x2="20" y1="18" x2="20" y1="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <a href="#overview" class="mobile-nav-link">Overview</a>
+      <a href="#day1" class="mobile-nav-link">Day 1: Fusion 360 &amp; CAD</a>
+      <a href="#day2" class="mobile-nav-link">Day 2: Laser Cutting &amp; RDWorks</a>
+      <a href="#day3" class="mobile-nav-link">Day 3: 3D Printing &amp; Bambu Studio</a>
+      <a href="#summary" class="mobile-nav-link">Summary &amp; Skills</a>
+      <a href="#reflection" class="mobile-nav-link">Personal Reflection</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-on-scroll">
+          <div class="hero-meta-bar">
+            <span class="badge-tag">ProtoSem Milestone</span>
+            <span class="badge-tag badge-date">26–29 September 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            Week 6 – <span>Industrial-Ready Prototyping</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            An immersive hands-on engineering journey transitioning from digital concepts to physical realization through precision 3D CAD modelling, laser cutting, and additive manufacturing.
+          </p>
+
+          <div class="tools-pill-group">
+            <div class="tool-chip">
+              <span class="tool-chip-dot"></span>
+              Autodesk Fusion 360
+            </div>
+            <div class="tool-chip">
+              <span class="tool-chip-dot"></span>
+              RDWorks V8
+            </div>
+            <div class="tool-chip">
+              <span class="tool-chip-dot"></span>
+              Bambu Studio
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image (fablab-laser-cutter.jpg) -->
+        <div class="hero-image-wrapper lightbox-trigger reveal-on-scroll" title="Click to enlarge image">
+          <img 
+            src="assets/fablab-laser-cutter.jpg" 
+            alt="Photo at FABLAB COIMBATORE beside the laser cutter, with the laser-cutter rules &amp; safety board on the wall" 
+            data-caption="Photo at FABLAB COIMBATORE beside the laser cutter, with the laser-cutter rules &amp; safety board on the wall"
+            loading="lazy"
+          >
+          <div class="image-badge-overlay">
+            <span>FABLAB COIMBATORE • Laser Cutting Lab</span>
+            <span>🔍 Click to Expand</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Overview Section -->
+    <section id="overview" class="overview-section">
+      <div class="container">
+        <div class="overview-card reveal-on-scroll">
+          <span class="badge-tag" style="margin-bottom: 0.75rem;">Executive Overview</span>
+          <h2 class="overview-title">Digital Conception to Physical Prototype</h2>
+          <p class="overview-text">
+            During Week 6 (26 September 2026 – 29 September 2026), we were introduced to the fundamentals of industrial-ready prototyping through hands-on sessions covering 3D CAD modelling, laser cutting, and 3D printing. The sessions were aimed not only at learning software tools but also at understanding how a digital design is converted into a physical prototype using different manufacturing technologies. We used Autodesk Fusion 360, RDWorks V8, and Bambu Studio, along with practical activities involving CAD modelling, clay-based product creation, laser cutting, and 3D-printing preparation.
+          </p>
+
+          <div class="pipeline-strip">
+            <span class="pipeline-item">Idea</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-item">Design</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-item">Physical Form</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-item">Prototype</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Day 1: Fusion 360 and CAD -->
+    <section id="day1" class="day-section">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <div class="section-tag-row">
+            <span class="badge-tag">Day 1</span>
+            <span class="badge-tag badge-date">26 September 2026</span>
+          </div>
+          <h2 class="section-title">Fusion 360 and CAD Modelling</h2>
+          <p class="section-intro">
+            Foundations of digital product design: navigating workspace ergonomics, parametric file structures, 2D sketch constraint engines, and essential 3D solid operations.
+          </p>
+        </div>
+
+        <!-- 1. Installation & File Structure -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">1. Installation, Workspace &amp; File Structure</h3>
+          <div class="card-grid-2">
+            <div class="proto-card">
+              <span class="card-num">Module 01</span>
+              <h4 class="card-heading">Installation &amp; Workspace</h4>
+              <p class="card-desc">
+                We installed Autodesk Fusion 360 and explored the primary workspace. We learned that Fusion 360 provides an integrated environment for 2D sketching, 3D modelling, product design, prototyping, and manufacturing preparation, recognizing the critical necessity of accurate digital models before physical fabrication.
+              </p>
+            </div>
+
+            <div class="proto-card">
+              <span class="card-num">Module 02</span>
+              <h4 class="card-heading">Design File Structure</h4>
+              <p class="card-desc">
+                We examined the architecture of a Fusion 360 project: Document Settings, Units and Measurement Settings, Origin and Coordinate System, Bodies, Components, Sketches, Named Views, and the Design History timeline that powers parametric feature-based modelling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Sketch Tools -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">2. Sketch Environment Tools Practised</h3>
+          <div class="sketch-tools-grid">
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>📏</span> Line</div>
+              <div class="sketch-tool-desc">Creates straight-line geometry and segments.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>⚖️</span> Midpoint Line</div>
+              <div class="sketch-tool-desc">Builds lines referenced symmetrically from midpoint.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>⬛</span> Rectangle</div>
+              <div class="sketch-tool-desc">Generates 2-point, 3-point, and center rectangles.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>⚪</span> Circle</div>
+              <div class="sketch-tool-desc">Defines center-diameter and perimeter circular profiles.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🌙</span> Arc</div>
+              <div class="sketch-tool-desc">Forms 3-point, center-point, and tangent curved spans.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🔷</span> Polygon</div>
+              <div class="sketch-tool-desc">Creates inscribed and circumscribed multi-sided shapes.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🥚</span> Ellipse</div>
+              <div class="sketch-tool-desc">Establishes major/minor axis elliptical profiles.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>〰️</span> Spline</div>
+              <div class="sketch-tool-desc">Draws smooth, organic, free-form spline curves.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>📍</span> Point</div>
+              <div class="sketch-tool-desc">Places datum and construction reference points.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🔤</span> Text</div>
+              <div class="sketch-tool-desc">Inserts geometric text strings for embossing/extrusions.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🪞</span> Mirror</div>
+              <div class="sketch-tool-desc">Duplicates geometry symmetrically across an axis.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🔄</span> Circular Pattern</div>
+              <div class="sketch-tool-desc">Repeats features radially around a central axis.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>▦</span> Rectangular Pattern</div>
+              <div class="sketch-tool-desc">Arranges repeated elements in linear rows &amp; columns.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>📐</span> Project / Include</div>
+              <div class="sketch-tool-desc">Brings external geometry onto the active sketch plane.</div>
+            </div>
+            <div class="sketch-tool-item">
+              <div class="sketch-tool-name"><span>🏷️</span> Sketch Dimension</div>
+              <div class="sketch-tool-desc">Applies precise parametric measurements &amp; geometric constraints.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 3D Modelling Operations -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">3. 3D Modelling Operations</h3>
+          <div class="card-grid-4">
+            <div class="proto-card">
+              <span class="card-num">Operation 01</span>
+              <h4 class="card-heading">Extrude</h4>
+              <p class="card-desc">Adds thickness or depth to planar 2D sketch profiles, transforming them into solid three-dimensional geometry.</p>
+            </div>
+            <div class="proto-card">
+              <span class="card-num">Operation 02</span>
+              <h4 class="card-heading">Fillet</h4>
+              <p class="card-desc">Rounds sharp part edges to reduce stress concentration, enhance tactile ergonomics, and improve visual aesthetics.</p>
+            </div>
+            <div class="proto-card">
+              <span class="card-num">Operation 03</span>
+              <h4 class="card-heading">Mirror</h4>
+              <p class="card-desc">Reproduces existing 3D bodies or features symmetrically across a plane to eliminate redundant CAD modelling work.</p>
+            </div>
+            <div class="proto-card">
+              <span class="card-num">Operation 04</span>
+              <h4 class="card-heading">Rectangular Pattern</h4>
+              <p class="card-desc">Duplicates features across defined spatial vectors and spacing intervals for consistent multi-element fabrication.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Practical CAD Designs & Image Placeholders -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">4. Practical CAD Models &amp; Design Artifacts</h3>
+          <p class="section-intro" style="margin-bottom: 1.5rem;">
+            As part of the practical activity, we developed two different CAD designs combining sketches, extrusions, fillets, mirrors, and pattern operations to build complete 3D models.
+          </p>
+
+          <div class="card-grid-2">
+            <!-- Placeholder 1: Fusion 360 interface -->
+            <div class="placeholder-card">
+              <div class="placeholder-icon">💻</div>
+              <div class="placeholder-label">Fusion 360 Interface &amp; Sketch Tools</div>
+              <div class="placeholder-sub">Image placeholder: Software workspace overview</div>
+            </div>
+
+            <!-- Placeholder 2: Two Fusion 360 models -->
+            <div class="placeholder-card">
+              <div class="placeholder-icon">📐</div>
+              <div class="placeholder-label">Two Fusion 360 CAD Models</div>
+              <div class="placeholder-sub">Image placeholder: Multi-angle CAD design renders</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Clay Activity -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">5. Physical Clay Prototyping Activity</h3>
+          <div class="card-grid-2" style="align-items: stretch;">
+            <div class="proto-card" style="justify-content: center;">
+              <span class="card-num">Tangible Prototyping</span>
+              <h4 class="card-heading">Clay House Model: Idea to Physical Form</h4>
+              <p class="card-desc" style="margin-bottom: 1rem;">
+                After digital CAD modelling, we used coloured clay to create a physical house prototype. Shaping the material by hand, I constructed the main house structure, the sloped roof, entrance, surrounding ground area, pathway, and boundary elements.
+              </p>
+              <p class="card-desc">
+                <strong>Learning Outcome:</strong> Realized that early-stage prototyping is not confined to screens; hands-on physical materials allow rapid, cost-effective spatial validation and tactile communication of design concepts.
+              </p>
+            </div>
+
+            <!-- Placeholder 3: Clay house -->
+            <div class="placeholder-card">
+              <div class="placeholder-icon">🏠</div>
+              <div class="placeholder-label">Clay House Model Prototype</div>
+              <div class="placeholder-sub">Image placeholder: Hand-shaped clay architectural prototype</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Day 2: Laser Cutting and RDWorks V8 -->
+    <section id="day2" class="day-section">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <div class="section-tag-row">
+            <span class="badge-tag">Day 2</span>
+            <span class="badge-tag badge-date">28 September 2026</span>
+          </div>
+          <h2 class="section-title">Laser Cutting with RDWorks V8</h2>
+          <p class="section-intro">
+            Subtractive digital fabrication: software interface parameters, beam physics (engrave vs cut), material safety controls, and practical acrylic cutting at FabLab Coimbatore.
+          </p>
+        </div>
+
+        <!-- 1. Software & Interface -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">1. RDWorks V8 Installation &amp; Interface</h3>
+          <div class="card-grid-2">
+            <div class="proto-card">
+              <span class="card-num">Preparation</span>
+              <h4 class="card-heading">Software Setup &amp; Purpose</h4>
+              <p class="card-desc">
+                We installed RDWorks V8, the machine-control and job-preparation software paired with the industrial CO2 laser cutter at FabLab Coimbatore. It enables vector importing, path optimization, operation assignment, parameter configuration, and transmitting compiled instructions to the machine controller.
+              </p>
+            </div>
+
+            <div class="proto-card">
+              <span class="card-num">Parameters</span>
+              <h4 class="card-heading">Interface &amp; Tool Sections</h4>
+              <p class="card-desc">
+                Explored the virtual working bed, color-coded layer organization, drawing and alignment tools, manual/parametric scaling, coordinate positioning, laser work settings, speed (mm/s), laser tube power (%), and output sequence controls.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Engrave vs Cut & Governing Factors -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">2. Engrave vs Cut &amp; Governing Variables</h3>
+          <div class="card-grid-2">
+            <div class="proto-card">
+              <span class="card-num">Laser Mode</span>
+              <h4 class="card-heading">Engrave (Raster/Scan) vs Cut (Vector)</h4>
+              <p class="card-desc">
+                <strong>Engraving:</strong> The laser head scans back and forth, vaporizing microscopic surface layers to create etched imagery, typography, and textures without penetrating through.<br><br>
+                <strong>Cutting:</strong> The laser head follows continuous vector lines with focused intensity and air-assist to burn completely through the stock sheet.
+              </p>
+            </div>
+
+            <div class="proto-card">
+              <span class="card-num">Governing Factors</span>
+              <h4 class="card-heading">Crucial Operating Parameters</h4>
+              <p class="card-desc">
+                The final outcome is governed by the interplay of:
+                <br>• <strong>Laser Power (%):</strong> Beam intensity.
+                <br>• <strong>Travel Speed (mm/s):</strong> Dwell time over material.
+                <br>• <strong>Material Type:</strong> Acrylic, MDF, wood, paper.
+                <br>• <strong>Stock Thickness:</strong> Focal depth requirement.
+                <br>• <strong>Number of Passes:</strong> Gradual cutting for clean kerfs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Workflow Timeline -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">3. Laser Processing Workflow</h3>
+          <div class="workflow-timeline-wrapper">
+            <div class="workflow-timeline">
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 01</span>
+                <span class="workflow-step-title">Design</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 02</span>
+                <span class="workflow-step-title">Import &amp; Prep</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 03</span>
+                <span class="workflow-step-title">Layer Setup</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 04</span>
+                <span class="workflow-step-title">Speed &amp; Power</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 05</span>
+                <span class="workflow-step-title">Machine Setup</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 06</span>
+                <span class="workflow-step-title">Laser Processing</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Step 07</span>
+                <span class="workflow-step-title">Final Output</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Safety Checklist -->
+        <div class="sub-block reveal-on-scroll">
+          <div class="checklist-card">
+            <span class="card-num">Lab Protocols</span>
+            <h3 class="card-heading" style="font-size: 1.25rem;">Laser Cutting Safety Checklist</h3>
+            <p class="card-desc">Essential precautions mandated and practiced in the FabLab Coimbatore workspace:</p>
+            <div class="checklist-grid">
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span>Proper machine setup (chiller on, air assist active, exhaust ventilation on).</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span>Correct material placement flat on honeycomb bed; accurate focal spacing.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span>Appropriate speed &amp; power selection verified before job execution.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span>Continuous visual monitoring of the machine during the entire cutting run.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span>Strict adherence to laboratory rules and safety board guidelines.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Practical Gallery (Images 1–4) & RDWorks Placeholder -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">5. Laser Fabrication Practical Gallery</h3>
+          <p class="section-intro" style="margin-bottom: 1.5rem;">
+            Prepared my own design, configured vector layers in RDWorks V8, and executed laser engraving and cutting on clear acrylic sheet. Click any photo to inspect in high resolution.
+          </p>
+
+          <div class="gallery-grid">
+            <!-- Image 1: fablab-laser-cutter.jpg -->
+            <div class="gallery-item lightbox-trigger">
+              <div class="gallery-img-container">
+                <img 
+                  src="assets/fablab-laser-cutter.jpg" 
+                  alt="Photo at FABLAB COIMBATORE beside the laser cutter, with the laser-cutter rules &amp; safety board on the wall"
+                  data-caption="Photo at FABLAB COIMBATORE beside the laser cutter, with the laser-cutter rules &amp; safety board on the wall"
+                  loading="lazy"
+                >
+              </div>
+              <div class="gallery-caption">
+                <strong>1. FabLab Coimbatore Machine Environment</strong>
+                Beside the industrial laser cutter with laboratory safety protocols.
+              </div>
+            </div>
+
+            <!-- Image 2: engraving-source-design.jpg -->
+            <div class="gallery-item lightbox-trigger">
+              <div class="gallery-img-container">
+                <img 
+                  src="assets/engraving-source-design.jpg" 
+                  alt="Black-and-white line-art cartoon (Stitch) source vector artwork used for laser engraving"
+                  data-caption="Black-and-white line-art cartoon (Stitch) — the source vector artwork used for laser engraving"
+                  loading="lazy"
+                >
+              </div>
+              <div class="gallery-caption">
+                <strong>2. Source Vector Artwork (Stitch)</strong>
+                High-contrast line-art vector prepared for raster engraving in RDWorks.
+              </div>
+            </div>
+
+            <!-- Image 4: laser-cutting-process.jpg -->
+            <div class="gallery-item lightbox-trigger">
+              <div class="gallery-img-container">
+                <img 
+                  src="assets/laser-cutting-process.jpg" 
+                  alt="Laser head (copper block with nozzle) cutting a clear acrylic sheet on the honeycomb bed, with many cut-out shapes"
+                  data-caption="Laser head (copper block with nozzle) cutting a clear acrylic sheet on the honeycomb bed, with many cut-out shapes"
+                  loading="lazy"
+                >
+              </div>
+              <div class="gallery-caption">
+                <strong>3. Laser Processing in Action</strong>
+                Laser head with copper nozzle executing cutting passes over clear acrylic stock.
+              </div>
+            </div>
+
+            <!-- Image 3: engraved-acrylic-output.jpg -->
+            <div class="gallery-item lightbox-trigger">
+              <div class="gallery-img-container">
+                <img 
+                  src="assets/engraved-acrylic-output.jpg" 
+                  alt="Close-up of the laser-engraved clear acrylic disc with the engraved design and text"
+                  data-caption="Close-up of the laser-engraved clear acrylic disc with the engraved design and text"
+                  loading="lazy"
+                >
+              </div>
+              <div class="gallery-caption">
+                <strong>4. Final Engraved Acrylic Disc</strong>
+                Resulting clear acrylic medallion showcasing engraved Stitch artwork and typography.
+              </div>
+            </div>
+          </div>
+
+          <!-- RDWorks Screen Placeholder -->
+          <div style="margin-top: 1.5rem;">
+            <div class="placeholder-card">
+              <div class="placeholder-icon">🖥️</div>
+              <div class="placeholder-label">RDWorks V8 Screen &amp; Job Configuration</div>
+              <div class="placeholder-sub">Image placeholder: Laser layer speed, power, and toolpath setup screen</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Day 3: 3D Printing -->
+    <section id="day3" class="day-section">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <div class="section-tag-row">
+            <span class="badge-tag">Day 3</span>
+            <span class="badge-tag badge-date">29 September 2026</span>
+          </div>
+          <h2 class="section-title">3D Printing &amp; Product Modelling</h2>
+          <p class="section-intro">
+            Additive manufacturing: CAD translation, slicing parameters in Bambu Studio, Design for Additive Manufacturing (DfAM), and practical mobile cover fabrication for the OPPO A3x 5G.
+          </p>
+        </div>
+
+        <!-- 1. Pipeline & Slicing -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">1. Additive Manufacturing Pipeline</h3>
+          <div class="workflow-timeline-wrapper">
+            <div class="workflow-timeline">
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 01</span>
+                <span class="workflow-step-title">3D Concept</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 02</span>
+                <span class="workflow-step-title">CAD Model</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 03</span>
+                <span class="workflow-step-title">Slicing Software</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 04</span>
+                <span class="workflow-step-title">G-code Toolpath</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 05</span>
+                <span class="workflow-step-title">3D Printer</span>
+              </div>
+              <div class="workflow-step">
+                <span class="workflow-step-num">Phase 06</span>
+                <span class="workflow-step-title">Prototype</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-grid-2">
+            <div class="proto-card">
+              <span class="card-num">Technology Core</span>
+              <h4 class="card-heading">Additive vs Subtractive Fabrication</h4>
+              <p class="card-desc">
+                Unlike subtractive methods that cut away stock, 3D printing creates an object layer by layer from fused filament, enabling hollow internal geometries, complex overhangs, and consolidated assemblies.
+              </p>
+            </div>
+            <div class="proto-card">
+              <span class="card-num">Bambu Studio</span>
+              <h4 class="card-heading">Slicing Software Controls</h4>
+              <p class="card-desc">
+                Bambu Studio bridges the 3D model with hardware. Key parameters configured include model placement on build plate, orientation, scale, layer height, support structures, infill pattern/density, printer hardware selection, and toolpath preview.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Mobile Cover Project -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">2. Product Project: OPPO A3x 5G Mobile Cover</h3>
+          <p class="section-intro" style="margin-bottom: 1.5rem;">
+            Designed a functional 3D protective phone case tailored specifically to the form factor and interface cutouts of the OPPO A3x 5G smartphone.
+          </p>
+
+          <div class="card-grid-2">
+            <div class="proto-card">
+              <span class="card-num">Engineering Specifications</span>
+              <h4 class="card-heading">Design Parameters Considered</h4>
+              <ul class="card-desc" style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <li>• <strong>Overall Dimensions:</strong> Phone length, width, and depth tolerance.</li>
+                <li>• <strong>Phone Thickness &amp; Fit:</strong> Snap-fit retention without scratching.</li>
+                <li>• <strong>Corner Geometry:</strong> Ergonomic impact-absorbing corner fillets.</li>
+                <li>• <strong>Camera Area:</strong> Raised perimeter lip shielding optical lenses.</li>
+                <li>• <strong>Side Buttons:</strong> Tactile pass-through button covers.</li>
+                <li>• <strong>Port Openings:</strong> USB-C charging, speaker grilles, mic clearance.</li>
+                <li>• <strong>Wall Thickness:</strong> Structural rigidity balancing filament use.</li>
+              </ul>
+            </div>
+
+            <!-- Placeholders: 3D mobile cover model & Bambu Studio screen -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="placeholder-card" style="min-height: 140px; flex: 1;">
+                <div class="placeholder-icon">📱</div>
+                <div class="placeholder-label">3D Mobile Cover Model (OPPO A3x 5G)</div>
+                <div class="placeholder-sub">Image placeholder: Parametric case CAD model</div>
+              </div>
+              <div class="placeholder-card" style="min-height: 140px; flex: 1;">
+                <div class="placeholder-icon">🖨️</div>
+                <div class="placeholder-label">Bambu Studio Screen</div>
+                <div class="placeholder-sub">Image placeholder: Slicer toolpath &amp; print estimation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. DfAM Checklist -->
+        <div class="sub-block reveal-on-scroll">
+          <div class="checklist-card">
+            <span class="card-num">Engineering Best Practice</span>
+            <h3 class="card-heading" style="font-size: 1.25rem;">Design for Additive Manufacturing (DfAM) Checklist</h3>
+            <p class="card-desc">Rules followed when preparing digital 3D models for trouble-free printing:</p>
+            <div class="checklist-grid">
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Correct Dimensions:</strong> Verified fit tolerances for phone body.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Appropriate Wall Thickness:</strong> Uniform shells preventing warping.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Proper Orientation:</strong> Maximized build-plate adhesion and surface finish.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Overhang Avoidance:</strong> Minimizing unnecessary support material waste.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Port Openings:</strong> Generous clearance around cables and audio ports.</span>
+              </div>
+              <div class="checklist-item">
+                <span class="check-icon">✓</span>
+                <span><strong>Slice Verification:</strong> Layer-by-layer inspection prior to machine transmission.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 10-Step Numbered Stepper -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">4. 10-Step 3D Printer Operation Stepper</h3>
+          <div class="stepper-list">
+            <div class="stepper-item">
+              <div class="stepper-bubble">1</div>
+              <div class="stepper-text">
+                <strong>Preparing the Digital Model</strong>
+                Finalize CAD geometry and export manifold watertight 3D file (STEP/STL).
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">2</div>
+              <div class="stepper-text">
+                <strong>Importing into Slicing Software</strong>
+                Load 3D model into Bambu Studio workspace.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">3</div>
+              <div class="stepper-text">
+                <strong>Printer &amp; Material Selection</strong>
+                Configure hardware profile, nozzle size, and filament type (PLA/PETG).
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">4</div>
+              <div class="stepper-text">
+                <strong>Positioning &amp; Orienting the Model</strong>
+                Orient flat faces on build bed to minimize overhangs and supports.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">5</div>
+              <div class="stepper-text">
+                <strong>Generating Sliced Toolpath</strong>
+                Execute slicing engine to calculate layer slices, walls, and infill geometry.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">6</div>
+              <div class="stepper-text">
+                <strong>Previewing the Print Process</strong>
+                Scrub through layer slider to inspect internal infill, supports, and nozzle motions.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">7</div>
+              <div class="stepper-text">
+                <strong>Preparing the 3D Printer</strong>
+                Clean bed plate, confirm bed leveling, and load filament spool.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">8</div>
+              <div class="stepper-text">
+                <strong>Starting the Print</strong>
+                Transmit G-code job to printer and initiate heated bed/hotend cycle.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">9</div>
+              <div class="stepper-text">
+                <strong>Monitoring the Printing Process</strong>
+                Observe first-layer adhesion and inspect build progress for any defects.
+              </div>
+            </div>
+            <div class="stepper-item">
+              <div class="stepper-bubble">10</div>
+              <div class="stepper-text">
+                <strong>Removing &amp; Inspecting Prototype</strong>
+                Allow build plate to cool, flex plate to detach part, and inspect tolerances.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Summary Table & Key Skills -->
+    <section id="summary" class="day-section">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <span class="badge-tag">Synthesis</span>
+          <h2 class="section-title">Technology Summary &amp; Key Skills</h2>
+          <p class="section-intro">
+            A comprehensive matrix mapping fabrication technologies to software toolsets and competencies gained during Week 6.
+          </p>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="sub-block reveal-on-scroll">
+          <div class="table-wrapper">
+            <table class="proto-table">
+              <thead>
+                <tr>
+                  <th>Technology</th>
+                  <th>Software</th>
+                  <th>Main Learning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-tech-col">3D CAD Modelling</td>
+                  <td class="table-soft-col">Autodesk Fusion 360</td>
+                  <td>Sketching and 3D product design</td>
+                </tr>
+                <tr>
+                  <td class="table-tech-col">Laser Cutting</td>
+                  <td class="table-soft-col">RDWorks V8</td>
+                  <td>Digital fabrication through cutting and engraving</td>
+                </tr>
+                <tr>
+                  <td class="table-tech-col">3D Printing</td>
+                  <td class="table-soft-col">Bambu Studio</td>
+                  <td>Preparing and manufacturing 3D prototypes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Key Skills Tag Chips -->
+        <div class="sub-block reveal-on-scroll">
+          <h3 class="sub-title">Key Skills Developed</h3>
+          <div class="skills-wrap">
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Autodesk Fusion 360</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>2D sketch creation</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>3D CAD modelling</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Extrusion</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Fillet</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Mirror</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Rectangular Pattern</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Basic CAD file structure</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Dimensional modelling</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Physical clay prototyping</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Laser cutting fundamentals</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>RDWorks V8</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Laser engraving</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Laser machine operation</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>3D printing fundamentals</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Bambu Studio</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Mobile-cover modelling</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Design for additive manufacturing</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>3D printer operation</span>
+            <span class="skill-tag"><span class="skill-tag-dot"></span>Digital-to-physical prototyping workflow</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. Reflection Section -->
+    <section id="reflection" class="day-section">
+      <div class="container">
+        <div class="reflection-card reveal-on-scroll">
+          <div class="reflection-quote-icon">“</div>
+          <span class="badge-tag" style="margin-bottom: 0.75rem;">Personal Reflection</span>
+          <h2 class="reflection-title">From Concept &amp; Design to Fabrication &amp; Physical Prototype</h2>
+          <p class="reflection-paragraph">
+            Week 6 marked an important shift from learning design concepts to understanding how digital designs can actually be manufactured. I began with basic CAD sketching in Fusion 360, where I learned how simple sketches can be transformed into detailed 3D models using tools such as Extrude, Fillet, Mirror, and Rectangular Pattern. The clay activity then gave me a more practical understanding of physical prototyping. Later, the laser-cutting session familiarized me with digital fabrication using RDWorks V8 and showed me how settings such as speed and power influence manufacturing. Finally, the 3D-printing session allowed me to apply CAD modelling to a real-world product through the design of a mobile phone cover for the OPPO A3x 5G and learning how the model can be prepared for 3D printing using Bambu Studio. Overall, this week helped me understand the full journey from concept and design to fabrication and physical prototype, which is an important foundation for industrial product development.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-pipeline">
+        Idea → Sketch → CAD Model → Digital Fabrication Preparation → Machine Processing → Physical Prototype
+      </p>
+      <p class="footer-copy">
+        © 2026 Kaviya M • Week 6 – Industrial-Ready Prototyping (26–29 September 2026)
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <button type="button" id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Expanded Image">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
